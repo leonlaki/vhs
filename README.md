@@ -38,10 +38,18 @@ Spring Boot REST API for managing VHS tapes, users, and rental transactions.
 ### Steps
 1. Clone the repository:
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/leonlaki/vhs.git
 cd VHS
 ```
 2. Run the application using Maven:
 ```bash
 mvn spring-boot:run
 ```
+3. Application runs on http://localhost:8080
+---
+## H2 Console
+H2 console is available at:
+http://localhost:8080/h2-console
+JDBC URL: jdbc:h2:mem:vhslab
+Username: sa
+Password:
