@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "1e21b078-e2c8-4033-8caa-53b5e47d62eb",
+		"name": "VHS API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24336043"
+	},
+	"item": [
+		{
+			"name": "Add user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Leon\",\r\n  \"surname\": \"Lakic\",\r\n  \"email\": \"leon.lakic25@gmail.com\",\r\n  \"dateOfBirth\": \"2001-11-12\",\r\n  \"phoneNumber\": \"+385957375917\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add VHS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Matrix\",\r\n  \"genre\": \"SCI_FI\",\r\n  \"releaseYear\": 1999,\r\n  \"durationMinutes\": 130,\r\n  \"director\": \"Wachowski\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vhs/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vhs",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all VHS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vhs\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vhs\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rent VHS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"vhsId\": 1,\r\n  \"rentalDate\": \"2025-12-28\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rentals/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rentals",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Return VHS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rentals/1/return\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rentals",
+						"1",
+						"return\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all rentals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rentals\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rentals\n"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
