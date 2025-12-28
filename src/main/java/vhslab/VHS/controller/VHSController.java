@@ -8,6 +8,7 @@ import vhslab.VHS.dto.vhs.VHSCreateRequest;
 import vhslab.VHS.dto.vhs.VHSResponse;
 import vhslab.VHS.model.VHS;
 import vhslab.VHS.service.VHSService;
+import vhslab.VHS.utility.Genre;
 
 import java.util.List;
 
@@ -37,6 +38,12 @@ public class VHSController {
     public ResponseEntity<List<VHSResponse>> getAllVhs() {
         List<VHSResponse> vhsList = vhsService.findAll().stream().map(this::mapToResponse).toList();
         return ResponseEntity.ok(vhsList);
+    }
+
+    @GetMapping("/genre/{genre}")
+    public ResponseEntity<List<VHSResponse>> getVHSByGenre(@PathVariable Genre genre) {
+        List<VHSResponse> lista = vhsService.getAllByGenre(genre).stream().map(this::mapToResponse).toList();
+        return ResponseEntity.ok(lista);
     }
 
 

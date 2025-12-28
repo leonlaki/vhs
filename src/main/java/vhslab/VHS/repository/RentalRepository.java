@@ -6,7 +6,9 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import vhslab.VHS.model.Rental;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Repository
 public interface RentalRepository extends JpaRepository<Rental, Long> {
@@ -27,4 +29,13 @@ public interface RentalRepository extends JpaRepository<Rental, Long> {
             @Param("newDueDate") LocalDate newDueDate
     );
 
+    List<Rental> findAllByReturnDateIsNullAndDueDateBefore(LocalDate date);
+
+    @Query("""
+    SELECT COALESCE(SUM(r.lateFee), 0)
+    FROM Rental r
+    WHERE r.user.id = :userId
+    AND r.lateFee IS NOT NULL
+    """)
+    BigDecimal sumLateFeesByUserId(@Param("userId") Long userId);
 }

@@ -3,6 +3,7 @@ package vhslab.VHS.service;
 import org.springframework.stereotype.Service;
 import vhslab.VHS.model.VHS;
 import vhslab.VHS.repository.VHSRepository;
+import vhslab.VHS.utility.Genre;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,6 +31,10 @@ public class VHSService {
 
     public void delete(Long vhsId) {
         vhsRepository.deleteById(vhsId);
+    }
+
+    public List<VHS> getAllByGenre(Genre genre) {
+        return vhsRepository.findAllByGenre(genre);
     }
 
 }

@@ -42,7 +42,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/users\n",
+					"raw": "http://localhost:8080/api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -50,7 +50,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"users\n"
+						"users"
 					]
 				}
 			},
@@ -63,7 +63,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"The Matrix\",\r\n  \"genre\": \"SCI_FI\",\r\n  \"releaseYear\": 1999,\r\n  \"durationMinutes\": 130,\r\n  \"director\": \"Wachowski\"\r\n}\r\n",
+					"raw": "{\r\n  \"title\": \"Mad Max: Fury Road\",\r\n  \"genre\": \"ACTION\",\r\n  \"releaseYear\": 2015,\r\n  \"durationMinutes\": 120,\r\n  \"director\": \"George Miller\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -92,7 +92,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/vhs\n",
+					"raw": "http://localhost:8080/api/vhs",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -100,7 +100,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"vhs\n"
+						"vhs"
 					]
 				}
 			},
@@ -142,7 +142,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/rentals/1/return\n",
+					"raw": "http://localhost:8080/api/rentals/1/return",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -152,7 +152,7 @@
 						"api",
 						"rentals",
 						"1",
-						"return\n"
+						"return"
 					]
 				}
 			},
@@ -164,7 +164,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/rentals\n",
+					"raw": "http://localhost:8080/api/rentals",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -172,7 +172,86 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"rentals\n"
+						"rentals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter VHS by genre",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vhs/genre/ACTION",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vhs",
+						"genre",
+						"ACTION"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get overdue rentals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rentals/overdue",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rentals",
+						"overdue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user's debt",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/1/debt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"debt"
 					]
 				}
 			},

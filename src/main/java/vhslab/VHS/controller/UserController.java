@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.*;
 import vhslab.VHS.dto.user.UserCreateRequest;
 import vhslab.VHS.dto.user.UserResponse;
 import vhslab.VHS.model.User;
+import vhslab.VHS.service.RentalService;
 import vhslab.VHS.service.UserService;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -17,6 +19,8 @@ import java.util.List;
 public class UserController {
 
     private UserService userService;
+
+    private RentalService rentalService;
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -38,6 +42,12 @@ public class UserController {
     public ResponseEntity<List<UserResponse>> getAllUsers() {
         List<UserResponse> users = userService.findAll().stream().map(this::mapToResponse).toList();
         return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/{id}/debt")
+    public ResponseEntity<BigDecimal> getUserDebt(@PathVariable Long id) {
+        BigDecimal debt = rentalService.getTotalDebtForUser(id);
+        return ResponseEntity.ok(debt);
     }
 
     private User mapToEntity(UserCreateRequest request) {

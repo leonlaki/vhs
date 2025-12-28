@@ -95,4 +95,13 @@ public class RentalService {
         return rentalRepository.save(rental);
     }
 
+    public List<Rental> getOverdueRentals() {
+        LocalDate today = LocalDate.now();
+        return rentalRepository.findAllByReturnDateIsNullAndDueDateBefore(today);
+    }
+
+    public BigDecimal getTotalDebtForUser(Long userId) {
+        return rentalRepository.sumLateFeesByUserId(userId);
+    }
+
 }

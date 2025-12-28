@@ -47,6 +47,12 @@ public class RentalController {
         return ResponseEntity.ok(rentals);
     }
 
+    @GetMapping("/overdue")
+    public ResponseEntity<List<RentalResponse>> getOverdueRentals() {
+        List<RentalResponse> response = rentalService.getOverdueRentals().stream().map(this::mapToResponse).toList();
+        return ResponseEntity.ok(response);
+    }
+
     private RentalResponse mapToResponse(Rental rental) {
         RentalResponse dto = new RentalResponse();
         dto.setRentalId(rental.getId());
