@@ -20,10 +20,11 @@ public class UserController {
 
     private UserService userService;
 
-    private RentalService rentalService;
+    private final RentalService rentalService;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, RentalService rentalService) {
         this.userService = userService;
+        this.rentalService = rentalService;
     }
 
     @PostMapping("/add")
