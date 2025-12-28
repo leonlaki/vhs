@@ -48,8 +48,7 @@ mvn spring-boot:run
 3. Application runs on http://localhost:8080
 ---
 ## H2 Console
-H2 console is available at:
-http://localhost:8080/h2-console
-JDBC URL: jdbc:h2:mem:vhslab
-Username: sa
+H2 console is available at: http://localhost:8080/h2-console  
+JDBC URL: jdbc:h2:mem:vhslab  
+Username: sa  
 Password:
